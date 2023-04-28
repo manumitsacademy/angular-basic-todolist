@@ -1,0 +1,6 @@
+<div>
+    <span class="mr-20" [class]="taskObj.status?'strike': ''">{{taskObj.val}}</span>
+    <button *ngIf="!taskObj.status" (click)="done()">Done</button>
+    <button *ngIf="taskObj.status" (click)="undo()">Undo</button>
+    <button (click)="del()" [disabled]="!taskObj.status">Delete</button>
+</div>

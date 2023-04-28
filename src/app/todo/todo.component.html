@@ -1,0 +1,5 @@
+<input type="text" [(ngModel)]="taskValue">
+<button class="mb-20" (click)="addTask()">Add Task</button>
+
+
+<app-task *ngFor="let task of taskList;let i=index" [taskObj]="task" [index]="i" (delEvent)="deleteTask($event)" (doneTask)="doneTask($event)" (undoTask)="undoTask($event)"></app-task>
